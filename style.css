@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  font-family: 'helvetica neue';
+
+}
+
+html,body{
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.card{
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: grey;
+border-radius: 100px;
+
+}
+
+img{
+    height: 350px;
+    width: 300px;
+    object-fit: cover;
+    padding: 20px 20px;
+    border-radius: 100px;
+    position: relative;
+}
+
+h2{
+
+    margin: 10px 10px;
+}
+
+button {
+  padding: 12px 30px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #6a5af9, #ff4ecd);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin: 5px 10px;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #7d6bff, #ff6ed1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.card i{
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  opacity: 0;
+  
+  
+  background-image: url(https://t3.ftcdn.net/jpg/01/14/77/58/360_F_114775804_4yfG9qbKp1NlF1RLo4MUlGIVj9MWhnnc.jpg);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  transform: translate(-50%,-50%) scale(0) rotate(-60deg);
+  transition: all cubic-bezier(.65,1,.77,1.44) 0.4s;
+}
