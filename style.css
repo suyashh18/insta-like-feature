@@ -1,83 +1,140 @@
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  font-family: 'helvetica neue';
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-html,body{
-
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: whitesmoke;
+body{
+  background: #0d0d0d;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* CARD DESIGN */
 .card{
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: grey;
-border-radius: 100px;
-
+  width: 320px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+  padding: 18px;
+  color: white;
+  text-align: center;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
-img{
-    height: 350px;
-    width: 300px;
-    object-fit: cover;
-    padding: 20px 20px;
-    border-radius: 100px;
-    position: relative;
+.card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.3);
 }
 
-h2{
-
-    margin: 10px 10px;
+/* PROFILE IMAGE */
+.card img{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6a5af9;
+  margin-top: 10px;
+  box-shadow: 0 0 18px rgba(106, 90, 249, 0.4);
 }
 
-button {
-  padding: 12px 30px;
-  font-size: 18px;
-  background: linear-gradient(135deg, #6a5af9, #ff4ecd);
+.name{
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 0 6px;
+}
+
+.details{
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.details.active{
+  opacity: 1;
+  max-height: 300px;
+}
+
+.details h3{
+  margin: 6px 0;
+  font-weight: 500;
+  font-size: 15px;
+  color: #d6d6d6;
+}
+
+.description{
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+/* BUTTONS */
+button{
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
   border: none;
-  border-radius: 50px;
+  border-radius: 10px;
+  font-size: 16px;
   color: white;
   cursor: pointer;
-  transition: 0.3s ease;
-  font-weight: 600;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  margin: 5px 10px;
+  transition: 0.3s;
+  font-weight: 500;
 }
 
-button:hover {
+.send{
+  background: linear-gradient(135deg, #6a5af9, #b34bff);
+  box-shadow: 0 0 12px rgba(179,75,255,0.4);
+}
+
+.send:hover{
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  background: linear-gradient(135deg, #7d6bff, #ff6ed1);
 }
 
-button:active {
-  transform: scale(0.95);
+/* LIKE BUTTON */
+.like{
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
+.like:not(:disabled):hover{
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.like:disabled{
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* HEART ANIMATION */
 .card i{
-
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 50px;
-  opacity: 0;
-  
-  
-  background-image: url(https://t3.ftcdn.net/jpg/01/14/77/58/360_F_114775804_4yfG9qbKp1NlF1RLo4MUlGIVj9MWhnnc.jpg);
-  background-size: cover;
-  background-clip: text;
-  -webkit-background-clip: text;
+  font-size: 65px;
   color: transparent;
+  opacity: 0;
 
-  transform: translate(-50%,-50%) scale(0) rotate(-60deg);
-  transition: all cubic-bezier(.65,1,.77,1.44) 0.4s;
+  background-image: url(https://cdn-icons-png.flaticon.com/512/833/833472.png);
+  background-size: cover;
+  -webkit-background-clip: text;
+
+  transform: translate(-50%, -50%) scale(0) rotate(-60deg);
+  transition: all 0.4s cubic-bezier(.65,1,.77,1.44);
 }
